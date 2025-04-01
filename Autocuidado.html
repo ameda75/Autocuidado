@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Diario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            background-color: #ffebf0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        #mensaje {
+            font-size: 1.5rem;
+            background: #ff80ab;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-primary mb-4">Tómate un respiro</h1>
+    <button class="btn btn-lg btn-primary" onclick="mostrarMensaje()">¿Qué necesito hoy?</button>
+    <div id="mensaje" class="animate__animated animate__fadeIn"></div>
+    
+    <script>
+        const mensajes = [
+            "Tómate cinco minutos para respirar profundamente.",
+            "Sal a dar un paseo y disfruta del aire fresco.",
+            "Escucha tu canción favorita y relájate.",
+            "Haz una pausa, estírate y mueve tu cuerpo.",
+            "Escribe tres cosas por las que estás agradecido hoy.",
+            "Desconéctate por un momento y descansa tu mente."
+        ];
+        
+        function mostrarMensaje() {
+            const mensajeElemento = document.getElementById("mensaje");
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            mensajeElemento.textContent = mensajeAleatorio;
+            mensajeElemento.style.display = "block";
+        }
+    </script>
+</body>
+</html>
